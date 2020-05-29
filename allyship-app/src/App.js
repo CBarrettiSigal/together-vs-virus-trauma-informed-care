@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import OptionButton from './components/OptionButton/OptionButton';
-import classes from './components/OptionButton/OptionButton.module.css';
+import Option from './components/Option/Option';
+import classes from './components/Option/Option.module.css';
 import CrisisNumber from './components/CrisisNumber/CrisisNumber';
 
 class App extends Component {
@@ -15,6 +15,7 @@ class App extends Component {
   }
 
   toggleCrisisNumberHandler = () => {
+    console.log('Was clicked');
     const doesShow = this.state.showCrisisNumber;
     this.setState({ showCrisisNumber: !doesShow });
   };
@@ -24,16 +25,17 @@ class App extends Component {
 
     const buttons = this.state.buttons.map(button => {
       if (button.id === 2) {
-       return <OptionButton
-          onClick={this.props.click}
+       return <Option
+          // onClick={this.props.clicked}
           key={button.id}
           text={button.text}
           showCrisisNumber={this.state.showCrisisNumber}
-          clicked={this.toggleCrisisNumberHandler} />;
+          onClick={this.toggleCrisisNumberHandler} />;
       } else {
-        return <OptionButton
+        return <Option
           key={button.id}
-          text={button.text} />;
+          text={button.text}
+          onClick={this.toggleCrisisNumberHandler} />;
       }
       });
 
@@ -45,13 +47,13 @@ class App extends Component {
           </h1>
             <img src="allyship_logo.png" className="App-logo" alt="logo" />
         </div>
-        <div className={classes.OptionButtonContainer}>
+        <div className={classes.OptionContainer}>
           {buttons}
+          <button onClick={this.toggleCrisisNumberHandler}>Test</button>
         </div>
           {this.state.showCrisisNumber ? (
             crisisNumber =
             <CrisisNumber
-              showCrisisNumber={this.state.showCrisisNumber}
             />
             ) : null}
       </div>
