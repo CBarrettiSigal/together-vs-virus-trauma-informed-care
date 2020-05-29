@@ -3,7 +3,10 @@ import classes from './OptionButton.module.css';
 
 const OptionButton = (props) => {
   return (
-    <div className={classes.OptionButton}>test</div>
+    <div
+      className={classes.OptionButton}
+      >{props.text}
+    </div>
   )
 };
 
