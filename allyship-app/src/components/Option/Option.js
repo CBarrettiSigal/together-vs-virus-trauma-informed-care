@@ -5,6 +5,7 @@ const Option = (props) => {
   return (
     <div
       className={classes.Option}
+      onClick={props.clicked}
       >{props.text}
     </div>
   )

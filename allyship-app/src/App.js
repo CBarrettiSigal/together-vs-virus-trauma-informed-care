@@ -15,44 +15,35 @@ class App extends Component {
   }
 
   toggleCrisisNumberHandler = () => {
-    console.log('Was clicked');
+    console.log('Was clicked!');
     const doesShow = this.state.showCrisisNumber;
     this.setState({ showCrisisNumber: !doesShow });
   };
 
   render () {
-    let crisisNumber = null;
-
-    const buttons = this.state.buttons.map(button => {
-      if (button.id === 2) {
-       return <Option
-          // onClick={this.props.clicked}
-          key={button.id}
-          text={button.text}
-          showCrisisNumber={this.state.showCrisisNumber}
-          onClick={this.toggleCrisisNumberHandler} />;
-      } else {
-        return <Option
-          key={button.id}
-          text={button.text}
-          onClick={this.toggleCrisisNumberHandler} />;
-      }
-      });
-
     return (
       <div className="App-container">
         <div className="App-header">
           <h1>
-            What is Trauma Informed Care for Healthcare Workers?
+            Trauma Informed Care for Healthcare Workers
           </h1>
             <img src="allyship_logo.png" className="App-logo" alt="logo" />
         </div>
         <div className={classes.OptionContainer}>
-          {buttons}
-          <button onClick={this.toggleCrisisNumberHandler}>Test</button>
+        <Option
+          text={this.state.buttons[0].text}
+          key={this.state.buttons[0].id}
+        /><Option
+          text={this.state.buttons[1].text}
+          key={this.state.buttons[1].id}
+          clicked={this.toggleCrisisNumberHandler}
+        /><Option
+          text={this.state.buttons[2].text}
+          key={this.state.buttons[2].id}
+        />
+          <button onClick={this.toggleCrisisNumberHandler}>Test Toggle Button (why does THIS work but not the big buttons?)</button>
         </div>
           {this.state.showCrisisNumber ? (
-            crisisNumber =
             <CrisisNumber
             />
             ) : null}
