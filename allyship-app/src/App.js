@@ -11,7 +11,7 @@ class App extends Component {
       { id: 2, text: 'i need help now' },
       { id: 3, text: 'i want ideas and resources to become a trauma-competent ally' }
     ],
-    showCrisisNumber: true
+    showCrisisNumber: false
   }
 
   toggleCrisisNumberHandler = () => {
@@ -32,16 +32,18 @@ class App extends Component {
         <div className={classes.OptionContainer}>
         <Option
           text={this.state.buttons[0].text}
-          key={this.state.buttons[0].id}
-        /><Option
+          key={this.state.buttons[0].id}/>
+        <Option
+          style={{
+            color: 'purple',
+            fontSize: '30px'
+          }}
           text={this.state.buttons[1].text}
           key={this.state.buttons[1].id}
-          clicked={this.toggleCrisisNumberHandler}
-        /><Option
+          clicked={this.toggleCrisisNumberHandler}/>
+        <Option
           text={this.state.buttons[2].text}
-          key={this.state.buttons[2].id}
-        />
-          <button onClick={this.toggleCrisisNumberHandler}>Test Toggle Button (why does THIS work but not the big buttons?)</button>
+          key={this.state.buttons[2].id}/>
         </div>
           {this.state.showCrisisNumber ? (
             <CrisisNumber

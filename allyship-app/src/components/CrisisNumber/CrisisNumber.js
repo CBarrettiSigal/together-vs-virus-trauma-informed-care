@@ -13,6 +13,9 @@ const CrisisNumber = (props) => {
       target="_blank"
       rel="noopener noreferrer">SuicidePrevention.ca
     </a>
+    <h3>
+      If you're wondering whether or not to call, PLEASE CALL. They are not just a Suicide Resource.
+    </h3>
     </div>
   )
 };

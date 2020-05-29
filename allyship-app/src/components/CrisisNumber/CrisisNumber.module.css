@@ -1,7 +1,15 @@
 .CrisisNumber {
   background-color: #0bbfb9;
+  box-shadow: inset 0px 0px 33px rgba(24, 24, 24, 0.5);
   color: rgb(260, 260, 260);
   min-height: 350px;
+  padding-top: 60px;
   text-align: center;
   width: 100%;
+}
+
+.CrisisNumber h3 {
+  font-size: calc(6px + 2vmin);
+  font-weight: lighter;
+  padding-top: 16px;
 }
