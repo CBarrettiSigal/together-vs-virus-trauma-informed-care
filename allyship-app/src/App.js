@@ -35,8 +35,9 @@ class App extends Component {
           key={this.state.buttons[0].id}/>
         <Option
           style={{
-            color: 'purple',
-            fontSize: '30px'
+            fontSize: 'calc(30px + 1.5vmin)',
+            paddingTop: '24px',
+            textAlign: 'center'
           }}
           text={this.state.buttons[1].text}
           key={this.state.buttons[1].id}
@@ -45,10 +46,9 @@ class App extends Component {
           text={this.state.buttons[2].text}
           key={this.state.buttons[2].id}/>
         </div>
-          {this.state.showCrisisNumber ? (
+          {this.state.showCrisisNumber &&
             <CrisisNumber
-            />
-            ) : null}
+            />}
       </div>
     );
   }

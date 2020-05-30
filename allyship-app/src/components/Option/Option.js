@@ -6,6 +6,7 @@ const Option = (props) => {
     <div
       className={classes.Option}
       onClick={props.clicked}
+      style={props.style}
       >{props.text}
     </div>
   )
