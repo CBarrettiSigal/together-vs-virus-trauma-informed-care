@@ -3,6 +3,7 @@ import './App.css';
 import Option from './components/Option/Option';
 import classes from './components/Option/Option.module.css';
 import CrisisNumber from './components/CrisisNumber/CrisisNumber';
+import ScrollTo from 'react-scroll-into-view';
 
 class App extends Component {
  state = {
@@ -33,6 +34,7 @@ class App extends Component {
         <Option
           text={this.state.buttons[0].text}
           key={this.state.buttons[0].id}/>
+        <ScrollTo selector={classes.CrisisNumber}>
         <Option
           style={{
             fontSize: 'calc(30px + 1.5vmin)',
@@ -42,6 +44,7 @@ class App extends Component {
           text={this.state.buttons[1].text}
           key={this.state.buttons[1].id}
           clicked={this.toggleCrisisNumberHandler}/>
+        </ScrollTo>
         <Option
           text={this.state.buttons[2].text}
           key={this.state.buttons[2].id}/>
