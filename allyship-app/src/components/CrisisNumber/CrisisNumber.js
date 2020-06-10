@@ -4,6 +4,7 @@ import classes from './CrisisNumber.module.css';
 const CrisisNumber = (props) => {
   return (
     <div
+        id="test-selector"
         className={classes.CrisisNumber}
         clicked={props.clicked}>
     <h1>If you're looking for a Crisis Line in Canada, please find one near you at
